@@ -1,9 +1,13 @@
-#include <iostream>
 #include "Array.hpp"
 
 #define MAX_VAL 750
+
 int main(int, char**)
 {
+	int * a = new int();
+	std::cout << *a << std::endl;
+	delete a;
+
     Array<int> numbers(MAX_VAL);
     int* mirror = new int[MAX_VAL];
     srand(time(NULL));
@@ -12,6 +16,7 @@ int main(int, char**)
         const int value = rand();
         numbers[i] = value;
         mirror[i] = value;
+		// std::cout << "Numbers: " << numbers[i] << " Mirror: " << mirror[i] << std::endl;
     }
     //SCOPE
     {
@@ -47,6 +52,7 @@ int main(int, char**)
     for (int i = 0; i < MAX_VAL; i++)
     {
         numbers[i] = rand();
+		// std::cout << "Numbers: " << numbers[i] << " Mirror: " << mirror[i] << std::endl;
     }
     delete [] mirror;//
     return 0;
